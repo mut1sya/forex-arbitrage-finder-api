@@ -1,7 +1,7 @@
-const axios = require('axios');
+import axios from 'axios';
 require('dotenv').config()
 
-async function getExchangeRates(base) {
+export async function getExchangeRates(base) {
     if (process.env.FREE_CURRENCY_API_KEY){
       try {
         const response = await axios.get('https://freecurrencyapi.net/api/v2/latest', {
@@ -20,4 +20,3 @@ async function getExchangeRates(base) {
     
   }
 
-  module.exports = getExchangeRates;

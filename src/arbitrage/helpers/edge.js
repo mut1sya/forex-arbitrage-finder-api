@@ -1,4 +1,4 @@
-class Edge {
+export class Edge {
     constructor(src, dest, exchange_rate) {
         this.src = src;
         this.dest = dest;
@@ -6,4 +6,3 @@ class Edge {
         this.weight = -(Math.log(this.exchange_rate));
     }
 }
-module.exports = Edge;

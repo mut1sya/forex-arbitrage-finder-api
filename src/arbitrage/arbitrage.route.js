@@ -1,10 +1,6 @@
-const express = require('express');
-const router = express.Router({ mergeParams: true });
+import express from 'express';
+import { getPaths } from './arbitrage.controller';
 
-const arbitrageController = require('./arbitrage.controller');
+export const arbitrageRouter = express.Router({ mergeParams: true });
+arbitrageRouter.route('/:baseCurrency').get(getPaths);
 
-
-router.route('/:baseCurrency')
-    .get(arbitrageController.get);
-
-module.exports = router;

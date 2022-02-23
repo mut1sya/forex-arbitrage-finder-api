@@ -1,15 +1,14 @@
-const arbitrageService = require('./arbitrage.service');
-const currencies = require('./data/currencies.json');
+import { getArbitragePath } from './arbitrage.service';
+import  * as currencies from './data/currencies.json'
 
-const get = async function(req, res){
+export async function getPaths(req, res){
     // check if input is in our currency data
     const currency = req.params.baseCurrency
-    if ( !currencies.includes(currency)){
+    if ( !currencies.default.includes(currency)){
         res.send("currency not available");
     } else {
-        res.send(await arbitrageService.get(currency));
+        res.send(await getArbitragePath(currency));
     }
     
 }
 
-module.exports = { get };

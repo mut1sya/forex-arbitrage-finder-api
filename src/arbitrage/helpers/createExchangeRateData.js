@@ -1,7 +1,7 @@
-const fs = require('fs');
+import fs from 'fs';
 
-const getExchangeRates = require('./getExchangeRates');
-const currencies = require('../data/currencies.json');
+import { getExchangeRates } from './getExchangeRates';
+import * as currencies from '../data/currencies.json'
 
 async function createExchangeRateData(){
     const exchangeRateData = {};
@@ -14,4 +14,5 @@ async function createExchangeRateData(){
     });
 }
 
-module.exports = createExchangeRateData;
+export { createExchangeRateData };
+

@@ -1,6 +1,6 @@
-const Edge = require('./edge');
+import { Edge } from './edge';
 
-class Graph {    
+export class Graph {    
     constructor() {
         this.vertices = new Set();
         this.edges = [];
@@ -105,5 +105,3 @@ class Graph {
         
     }
 }
-
-module.exports = Graph;

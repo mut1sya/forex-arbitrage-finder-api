@@ -1,8 +1,9 @@
 
-const Graph = require('./helpers/graph');
-const exchangeRateData = require('./data/exchangeRateData.json');
+import { Graph } from './helpers/graph';
+import * as exchangeRateData from './data/exchangeRateData.json';
 
-const get = async function(baseCurrency){
+
+export async function getArbitragePath(baseCurrency){
     let graph = new Graph();
     for (const key_src in exchangeRateData){
         for (const key_dest in exchangeRateData[key_src]){
@@ -12,5 +13,3 @@ const get = async function(baseCurrency){
     const result = graph.getMaxNegativeCycleBellmanFord(exchangeRateData, baseCurrency);
     return result;
 }
-
-module.exports = { get };
