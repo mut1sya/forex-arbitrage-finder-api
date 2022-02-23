@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon --exec babel-node src/index.js",
-    "build": "babel src -d dist",
+    "build": "babel src -d dist && cp -r src/arbitrage/data dist/arbitrage",
     "start": "npm run build && node dist/index.js", 
-    "serve": "node dist/server.js"
+    "serve": "node dist/index.js"
   },
   "author": "Mut1sya",
   "license": "EPL-2.0",
