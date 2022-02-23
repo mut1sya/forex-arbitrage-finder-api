@@ -49,3 +49,14 @@ The api has 2 endpoints. One to get the currencies and the other to get the arbi
 -------------------------|--------|----------
 /arbitrage/{basecurrency}| get    | gets the path to arbitrage
 /currencies              | get    | gets all the currencies
+
+
+### 6. Using docker-compose
+
+To run the application using docker-compose run the command below:
+
+    docker-compose up -d --build  
+
+The app will be started  at:    
+
+    http://localhost:9000
