@@ -5,9 +5,7 @@ import nodeCron from 'node-cron';
 import { appRouter } from './routes';
 import { createExchangeRateData } from './arbitrage/helpers/createExchangeRateData';
 
-require('dotenv').config()
-
-
+require('dotenv').config();
 
 //setup app & its routes
 const app = express();
